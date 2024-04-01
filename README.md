@@ -115,14 +115,14 @@ Part II: Running Network Analysis
 ##### Data Used for Visible Tree Analysis
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
-| Vancouver Lidar      | Vancouver Open Data      | Point      | [Lidar Data](https://opendata.vancouver.ca/explore/dataset/lidar-2022/information/)      |
+| Vancouver Lidar      | Vancouver Open Data      | Point      | [Vancouver Lidar Data](https://opendata.vancouver.ca/explore/dataset/lidar-2022/information/)      |
 | Land Use      | Metro Vancouver      | Polygon      | [Land Use](https://open-data-portal-metrovancouver.hub.arcgis.com/search?q=landuse)      |
 | Property Boundaries      | Vancouver Open Data      | Polyline      | [Property Boundaries](https://opendata.vancouver.ca/explore/dataset/property-cadastral-boundaries/information/)     | 
 
 ##### Data Used for Canopy Cover Analysis
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
-| Vancouver Lidar      | Vancouver Open Data      | Point      | [Lidar Data](https://opendata.vancouver.ca/explore/dataset/lidar-2022/information/)      |
+| Vancouver Lidar      | Vancouver Open Data      | Point      | [Vancouver Lidar Data](https://opendata.vancouver.ca/explore/dataset/lidar-2022/information/)      |
 
 ##### Data Used for Park Analysis
 | Data Name | Data Source | Data Type | Data Link |
