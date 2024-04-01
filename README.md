@@ -46,6 +46,18 @@ I graduated from the University of Northern British Columbia with a bachelor’s
 
 ## Data Sources
 
+##### Data Used for Visible Tree Analysis
+| Data Name | Data Source | Data Type | Data Link |
+|-----------------|-----------------|-----------------|-----------------|
+| Vancouver Lidar      | Vancouver Open Data      | Point      | [Lidar Data](https://opendata.vancouver.ca/explore/dataset/lidar-2022/information/)      |
+| Land Use      | Metro Vancouver      | Polygon      | [Land Use](https://open-data-portal-metrovancouver.hub.arcgis.com/search?q=landuse)      |
+| Property Boundaries      | Vancouver Open Data      | Polyline      | [Property Boundaries](https://opendata.vancouver.ca/explore/dataset/property-cadastral-boundaries/information/)     | 
+
+##### Data Used for Canopy Cover Analysis
+| Data Name | Data Source | Data Type | Data Link |
+|-----------------|-----------------|-----------------|-----------------|
+| Vancouver Lidar      | Vancouver Open Data      | Point      | [Lidar Data](https://opendata.vancouver.ca/explore/dataset/lidar-2022/information/)      |
+
 ##### Data Used for Park Analysis
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
@@ -53,53 +65,15 @@ I graduated from the University of Northern British Columbia with a bachelor’s
 | Vancouver Parks      | Vancouver Open Data      | Polygon      | [Vancover Parks](https://opendata.vancouver.ca/explore/dataset/public-streets/information/)      |
 | Land Use      | Metro Vancouver      | Polygon      | [Land Use](https://open-data-portal-metrovancouver.hub.arcgis.com/search?q=landuse)      |
 | Burnaby Parks      | Burnaby Open Data      | Polygon      | [Burnaby Parks](https://data.burnaby.ca/datasets/a1a896a4209d4325bacacea417ffc400_6/explore?location=49.237308%2C-122.958050%2C12.70)      |
-| Row 5 Data      | Row 5 Data      | Row 5 Data      | Row 5 Data      |
-| Row 6 Data      | Row 6 Data      | Row 6 Data      | Row 6 Data      |
-| Row 7 Data      | Row 7 Data      | Row 7 Data      | Row 7 Data      |
-| Row 8 Data      | Row 8 Data      | Row 8 Data      | Row 8 Data      |
-| Row 9 Data      | Row 9 Data      | Row 9 Data      | Row 9 Data      |
-| Row 10 Data     | Row 10 Data     | Row 10 Data     | Row 10 Data     |
+| Property Boundaries      | Vancouver Open Data      | Polyline      | [Property Boundaries](https://opendata.vancouver.ca/explore/dataset/property-cadastral-boundaries/information/)     | 
 
-##### Data Used for Visible Tree Analysis
-| Column 1 Header | Column 2 Header | Column 3 Header | Column 4 Header |
-|-----------------|-----------------|-----------------|-----------------|
-| Row 1 Data      | Row 1 Data      | Row 1 Data      | Row 1 Data      |
-| Row 2 Data      | Row 2 Data      | Row 2 Data      | Row 2 Data      |
-| Row 3 Data      | Row 3 Data      | Row 3 Data      | Row 3 Data      |
-| Row 4 Data      | Row 4 Data      | Row 4 Data      | Row 4 Data      |
-| Row 5 Data      | Row 5 Data      | Row 5 Data      | Row 5 Data      |
-| Row 6 Data      | Row 6 Data      | Row 6 Data      | Row 6 Data      |
-| Row 7 Data      | Row 7 Data      | Row 7 Data      | Row 7 Data      |
-| Row 8 Data      | Row 8 Data      | Row 8 Data      | Row 8 Data      |
-| Row 9 Data      | Row 9 Data      | Row 9 Data      | Row 9 Data      |
-| Row 10 Data     | Row 10 Data     | Row 10 Data     | Row 10 Data     |
 
-##### Data Used for Canopy Cover Analysis
-| Column 1 Header | Column 2 Header | Column 3 Header | Column 4 Header |
-|-----------------|-----------------|-----------------|-----------------|
-| Row 1 Data      | Row 1 Data      | Row 1 Data      | Row 1 Data      |
-| Row 2 Data      | Row 2 Data      | Row 2 Data      | Row 2 Data      |
-| Row 3 Data      | Row 3 Data      | Row 3 Data      | Row 3 Data      |
-| Row 4 Data      | Row 4 Data      | Row 4 Data      | Row 4 Data      |
-| Row 5 Data      | Row 5 Data      | Row 5 Data      | Row 5 Data      |
-| Row 6 Data      | Row 6 Data      | Row 6 Data      | Row 6 Data      |
-| Row 7 Data      | Row 7 Data      | Row 7 Data      | Row 7 Data      |
-| Row 8 Data      | Row 8 Data      | Row 8 Data      | Row 8 Data      |
-| Row 9 Data      | Row 9 Data      | Row 9 Data      | Row 9 Data      |
-| Row 10 Data     | Row 10 Data     | Row 10 Data     | Row 10 Data     |
 
 ##### General Data Used for all Analyses
-| Column 1 Header | Column 2 Header | Column 3 Header | Column 4 Header |
+| Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
-| Row 1 Data      | Row 1 Data      | Row 1 Data      | Row 1 Data      |
-| Row 2 Data      | Row 2 Data      | Row 2 Data      | Row 2 Data      |
-| Row 3 Data      | Row 3 Data      | Row 3 Data      | Row 3 Data      |
-| Row 4 Data      | Row 4 Data      | Row 4 Data      | Row 4 Data      |
-| Row 5 Data      | Row 5 Data      | Row 5 Data      | Row 5 Data      |
-| Row 6 Data      | Row 6 Data      | Row 6 Data      | Row 6 Data      |
-| Row 7 Data      | Row 7 Data      | Row 7 Data      | Row 7 Data      |
-| Row 8 Data      | Row 8 Data      | Row 8 Data      | Row 8 Data      |
-| Row 9 Data      | Row 9 Data      | Row 9 Data      | Row 9 Data      |
-| Row 10 Data     | Row 10 Data     | Row 10 Data     | Row 10 Data     |
+| Local Area Boundary      | Vancover Open Data      | Polyline      | [Local Area Boundary](https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name)      |
+| Dissemination Areas      | Canada Census      | Polygon      | [Dissemination Areas](https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21)      |
+
 
 
