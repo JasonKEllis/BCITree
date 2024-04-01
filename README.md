@@ -42,10 +42,31 @@ BCITree aims to facilitate citizen engagement in urban forestry by providing the
 
 (7) https://vancouver.ca/files/cov/urban-forest-strategy.pdf
 
+## Methodology and Justification
+
+##### Calculating park service area
+A simpler method of calculating which houses are within 300 meters of a park would be to use a buffer. However, this buffer uses a euclidean distance which does not accurately describe a property’s accessibility to a park. Instead, we used ArcGIS’s Network Analyst extension to create a service area using their service area analysis toolset. Using Vancouver streets as the network, a more accurate representation of the park’s service area was created.
+
+##### Using Park Vertices as Entrances
+Due to network analysis being constrained to a point-to-point logic, the park polygons were turned into points using the feature vertices to points tool. These vertices provide a good approximation of where pedestrians may enter these parks from.
+
+##### Cleaning Property boundaries
+The property boundary layer contained every property in vancouver and had no attribute data to discern between residential properties and other properties not being used in this analysis. Metro Vancouver land use data from 2016 was used to overlay onto the property boundaries and any property boundaries which did not intersect with the various housing land use polygons were discarded. However, there were 346 polygons labeled as unclassified or undeveloped which were cross referenced with an aerial imagery basemap to discern if any of the polygons were either housing properties or parks. From the 346 polygons, 138 were classified as housing, and 3 were classified as parks larger than 1 hectare.
+
+
+## Limitations
+##### Temporal Data Resolution Disparity
+Unfortunately, not all of the data used in this analysis was from the same year. For example, the Metro Vancouver land use data was from 2016 and had to be cross-referenced with basemap aerial imagery from 2021 to increase accuracy. However, a thorough analysis of the remaining unclassified and undeveloped polygons was made to minimize data discrepancies and ensure the reliability of the findings.
+
+
+
+
+
+
+
 
 ## Explanation of Index 
-BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To acomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage 
-as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
+We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To acomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
 
 ## General Workflow Processes
 #### Visible Trees Analysis Workflow
@@ -101,13 +122,6 @@ Part II: Running Network Analysis
 5. Use 300 meter service area layer to determine which property points fall within service area.
 6. Use _Summarize Within tool_ and amount of serviced points within dissemination polygons to determine percent of homes within 300 meters of a park per dissemination area.
 7. Repeat Part II for Local Area Boundaries.
-
-
-
-
-
-
-
 
 
 ## Data Sources
