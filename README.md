@@ -42,6 +42,11 @@ BCITree aims to facilitate citizen engagement in urban forestry by providing the
 
 (7) https://vancouver.ca/files/cov/urban-forest-strategy.pdf
 
+
+## Explanation of Index 
+BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To acomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage 
+as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
+
 ## General Workflow Processes
 #### Visible Trees Analysis Workflow
 Part I: Create TreeTops point layer
@@ -94,7 +99,8 @@ Part II: Running Network Analysis
 3. Create network analysis layer using street data.
 4. Run service area analysis using park vertices, streets, and a 300 meter distance.
 5. Use 300 meter service area layer to determine which property points fall within service area.
-6. Use _Summarize Within tool_ amount of serviced points with dissemination polygons to determine percent of homes within 300 meters of a park per dissemination area
+6. Use _Summarize Within tool_ and amount of serviced points within dissemination polygons to determine percent of homes within 300 meters of a park per dissemination area.
+7. Repeat Part II for Local Area Boundaries.
 
 
 
