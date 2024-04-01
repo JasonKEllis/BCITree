@@ -28,19 +28,19 @@ Furthermore, engaging citizens in the urban forest and monitoring the status and
 BCITree aims to facilitate citizen engagement in urban forestry by providing the public audience, including those interested in urban forestry, urban planning, landscape architecture, public health, and their local municipality, with the ability to visualize the state of canopy coverage and the distribution of the 3-30-300 tree equity rule. By providing this visualization, we hope that citizens can better understand the current distribution of urban tree ecosystem services and Vancouver's progress towards the 30% canopy target by 2050. Additionally, citizens can use this information to advocate for addressing tree inequity and the implementation of the 3-30-300 rule to decision-makers. This tool also enables planners and relevant stakeholders to approximate canopy coverage and identify areas in need of attention before a formal tree inventory can be commissioned by the City of Vancouver, supporting more equitable urban forest planning and management.
 
 #### Literature Sources
-(1)https://www.un.org/development/desa/pd/content/urbanization-0
+(1) https://www.un.org/development/desa/pd/content/urbanization-0
 
-(2)https://www.fs.usda.gov/research/treesearch/59488
+(2) https://www.fs.usda.gov/research/treesearch/59488
 
 (3) https://ehjournal.biomedcentral.com/articles/10.1186/s12940-016-0103-6
 
-(4)https://parkboardmeetings.vancouver.ca/2020/20201207/REPORT-UrbanForestStrategyUpdate-20201207.pdf
+(4) https://parkboardmeetings.vancouver.ca/2020/20201207/REPORT-UrbanForestStrategyUpdate-20201207.pdf
 
-(5)https://naturecanada.ca/wp-content/uploads/2022/09/Nature-Canada-Report-Tree-Equity.pdf
+(5) https://naturecanada.ca/wp-content/uploads/2022/09/Nature-Canada-Report-Tree-Equity.pdf
 
-(6)https://www.sciencedirect.com/science/article/abs/pii/S0048969723063660
+(6) https://www.sciencedirect.com/science/article/abs/pii/S0048969723063660
 
-(7)https://vancouver.ca/files/cov/urban-forest-strategy.pdf
+(7) https://vancouver.ca/files/cov/urban-forest-strategy.pdf
 
 ## General Workflow Processes
 #### Visible Trees Analysis Workflow
@@ -60,7 +60,7 @@ Part II: Find Number of trees near each building.
 4. Add a field in buildings layer called VisibleTrees.
 5. Calculate field for VisibleTrees by multiplying PointCount by a factor representing the average percentage of nearby trees that are visible.
 
-
+#### Canopy Cover Workflow
 
 
 
