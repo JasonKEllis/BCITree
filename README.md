@@ -1,6 +1,10 @@
 # BCITree
 An application directed towards analyzing urban forestry coverage and distribution, and engaging public awareness in urban forest equity.
 
+## Team
+David Choi
+Jason Ellis
+Logan Salayka-Ladouceur
 
 
 
@@ -39,5 +43,63 @@ I graduated from the University of British Columbia in 2023 with a Bachelor's de
 
 Logan Bio:
 I graduated from the University of Northern British Columbia with a bachelor’s in Math and Physics in 2016. I have an interest in GIS that relates to natural resources and have had the opportunity to work with several community forest organizations. This work included silviculture surveys, mapping, and modeling. I am currently enrolled in the GIS Advanced Diploma program at BCIT and am excited to broaden my skill set. In my free time, I enjoy outdoor activities such as biking, snowboarding, and rock climbing.
+
+## Data Sources
+
+##### Data Used for Park Analysis
+| Data Name | Data Source | Data Type | Data Link |
+|-----------------|-----------------|-----------------|-----------------|
+| Public Streets      | Vancouver Open Data      | PolyLine      | [Public Streets](https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21)      |
+| Vancouver Parks      | Vancouver Open Data      | Polygon      | [Vancover Parks](https://opendata.vancouver.ca/explore/dataset/public-streets/information/)      |
+| Land Use      | Metro Vancouver      | Polygon      | [Land Use](https://open-data-portal-metrovancouver.hub.arcgis.com/search?q=landuse)      |
+| Burnaby Parks      | Burnaby Open Data      | Polygon      | [Burnaby Parks](https://data.burnaby.ca/datasets/a1a896a4209d4325bacacea417ffc400_6/explore?location=49.237308%2C-122.958050%2C12.70)      |
+| Row 5 Data      | Row 5 Data      | Row 5 Data      | Row 5 Data      |
+| Row 6 Data      | Row 6 Data      | Row 6 Data      | Row 6 Data      |
+| Row 7 Data      | Row 7 Data      | Row 7 Data      | Row 7 Data      |
+| Row 8 Data      | Row 8 Data      | Row 8 Data      | Row 8 Data      |
+| Row 9 Data      | Row 9 Data      | Row 9 Data      | Row 9 Data      |
+| Row 10 Data     | Row 10 Data     | Row 10 Data     | Row 10 Data     |
+
+##### Data Used for Visible Tree Analysis
+| Column 1 Header | Column 2 Header | Column 3 Header | Column 4 Header |
+|-----------------|-----------------|-----------------|-----------------|
+| Row 1 Data      | Row 1 Data      | Row 1 Data      | Row 1 Data      |
+| Row 2 Data      | Row 2 Data      | Row 2 Data      | Row 2 Data      |
+| Row 3 Data      | Row 3 Data      | Row 3 Data      | Row 3 Data      |
+| Row 4 Data      | Row 4 Data      | Row 4 Data      | Row 4 Data      |
+| Row 5 Data      | Row 5 Data      | Row 5 Data      | Row 5 Data      |
+| Row 6 Data      | Row 6 Data      | Row 6 Data      | Row 6 Data      |
+| Row 7 Data      | Row 7 Data      | Row 7 Data      | Row 7 Data      |
+| Row 8 Data      | Row 8 Data      | Row 8 Data      | Row 8 Data      |
+| Row 9 Data      | Row 9 Data      | Row 9 Data      | Row 9 Data      |
+| Row 10 Data     | Row 10 Data     | Row 10 Data     | Row 10 Data     |
+
+##### Data Used for Canopy Cover Analysis
+| Column 1 Header | Column 2 Header | Column 3 Header | Column 4 Header |
+|-----------------|-----------------|-----------------|-----------------|
+| Row 1 Data      | Row 1 Data      | Row 1 Data      | Row 1 Data      |
+| Row 2 Data      | Row 2 Data      | Row 2 Data      | Row 2 Data      |
+| Row 3 Data      | Row 3 Data      | Row 3 Data      | Row 3 Data      |
+| Row 4 Data      | Row 4 Data      | Row 4 Data      | Row 4 Data      |
+| Row 5 Data      | Row 5 Data      | Row 5 Data      | Row 5 Data      |
+| Row 6 Data      | Row 6 Data      | Row 6 Data      | Row 6 Data      |
+| Row 7 Data      | Row 7 Data      | Row 7 Data      | Row 7 Data      |
+| Row 8 Data      | Row 8 Data      | Row 8 Data      | Row 8 Data      |
+| Row 9 Data      | Row 9 Data      | Row 9 Data      | Row 9 Data      |
+| Row 10 Data     | Row 10 Data     | Row 10 Data     | Row 10 Data     |
+
+##### General Data Used for all Analyses
+| Column 1 Header | Column 2 Header | Column 3 Header | Column 4 Header |
+|-----------------|-----------------|-----------------|-----------------|
+| Row 1 Data      | Row 1 Data      | Row 1 Data      | Row 1 Data      |
+| Row 2 Data      | Row 2 Data      | Row 2 Data      | Row 2 Data      |
+| Row 3 Data      | Row 3 Data      | Row 3 Data      | Row 3 Data      |
+| Row 4 Data      | Row 4 Data      | Row 4 Data      | Row 4 Data      |
+| Row 5 Data      | Row 5 Data      | Row 5 Data      | Row 5 Data      |
+| Row 6 Data      | Row 6 Data      | Row 6 Data      | Row 6 Data      |
+| Row 7 Data      | Row 7 Data      | Row 7 Data      | Row 7 Data      |
+| Row 8 Data      | Row 8 Data      | Row 8 Data      | Row 8 Data      |
+| Row 9 Data      | Row 9 Data      | Row 9 Data      | Row 9 Data      |
+| Row 10 Data     | Row 10 Data     | Row 10 Data     | Row 10 Data     |
 
 
