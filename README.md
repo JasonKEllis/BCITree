@@ -62,7 +62,39 @@ Part II: Find Number of trees near each building.
 
 #### Canopy Cover Workflow
 
+Part I: Create city-wide canopy cover polygon
 
+1. Create LAS dataset with all 181 Vancouver 2022 LiDAR tiles
+2. Select only high vegetation and run _LAS Dataset to Raster tool_ with a cell size of 0.25 m, interpolation type of binning, and output data type of integer.
+3. Run _Raster Calculator tool_ with Con(“inputraster”>0,1) to turn all pixels greater than 0 to 1 so the polygons we create are already dissolved.
+4. Run _Raster to Polygon tool_ and don’t simplify polygons so we can have greater control in the next steps.
+5. Run _Select Layer by Attribute tool_ to select shapes with area greater than 0.5 m.
+6. Run _Eliminate Polygon Part tool_ to remove holes less than 0.5 m in area and previous polygons not selected in step 5.
+7. Run _Generalize tool_ with a tolerance of 0.15 m to create CanopyPoly layer.
+
+Part II: Calculate Percentage 
+1. Run _Pairwise Dissolve tool_ on CanopyPoly to dissolve all polygons into one multipart polygon. This will simplify the next steps.
+2. Run _Pairwise Intersect tool_ with the DisseminationAreas Layer and the CanopyPoly layer. Make sure shape_area updates correctly.
+3. Run _Join Field tool_ on the DisseminationAreas feature class to perform a one-to-one join of the layer from step 2 to DisseminationAreas on any unique field (we chose DAUID). This will join the shape_area of the intersected layer to DisseminationAreas.
+4. Add a field called CanopyPercentage of type double to DisseminationAreas.
+5. Calculate this field as 100*Shape_Area_1/Shape_Area.
+6. Repeat with VancouverNeighbourhoods but first clip to DisseminationAreas to remove the water in the neighbourhoods layer to ensure the area is accurate.
+
+#### Park Service Area Workflow
+
+Part I: Cleaning Data
+1. Combine park datasets and filter out any parks under a hectare.
+2. Use Metro Vancouver land use data to determine property lots which are residential.
+3. Clean up unclassified parcels from land use layer using satellite imagery to diminish 2016 and 2024 discrepancy.
+4. Match cleaned residential land use layer to property boundary layer to get a property boundary layer only displaying housing property boundaries.
+
+Part II: Running Network Analysis
+1. Using _Features to Vertices tool_ determine park vertices to be used as park entrances in network analysis.
+2. Create a point layer displaying points for geometric center of each property boundary.
+3. Create network analysis layer using street data.
+4. Run service area analysis using park vertices, streets, and a 300 meter distance.
+5. Use 300 meter service area layer to determine which property points fall within service area.
+6. Use _Summarize Within tool_ amount of serviced points with dissemination polygons to determine percent of homes within 300 meters of a park per dissemination area
 
 
 
