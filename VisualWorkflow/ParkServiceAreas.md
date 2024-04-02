@@ -7,7 +7,7 @@ After the vertices were added as entrances, they were then snapped to the closes
 ![Comparison](../Photos/ParkNetwrokEntrances.png)
 
 Finally a network service area analysis was run to configure a final service area:
-![Comparison](Photos/ParkServiceArea.png)
+![Comparison](/Photos/ParkServiceArea.png)
 
 Here is a comparison of what a 300 meter buffer would look like compared to the network derived service area:
 ![Comparison](Photos/ParkBufferAndServiceArea.png)
