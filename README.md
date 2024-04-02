@@ -37,6 +37,10 @@ The 2022 Vancouver LiDAR data is well classified into tall vegetation and other 
 #### Finding the Number of Trees Visible for each Building
 This is nearly impossible to do with much accuracy as you would need an extremely detailed LiDAR dataset, window locations, and huge amounts of processing time. We have chosen a simple and easily repeatable process to get a rough estimate. We have also made a very conservative estimate and the actual tree visibility is likely higher - Vancouver is doing really well in this regard. Our process involves buffering every residential building by 30m and choosing no dissolve so we have an individual polygon buffer for each building. Then we count the number of trees in each buffer polygon and join this count back to the buildings layer. Finally we multiply the count by a factor that represents the percentage of trees that will be visible. In this case, a conservative estimate of 0.25 was used. This method could be combined with more detailed viewshed analyses in small areas or a field analysis to derive more accurate parameters.
 
+#### Calculating Index
+It is worth noting that in creating our Index, we equally weighted the three different analysis layers. It may be that in future analyses, canopy cover and distance to parks will be seen as more important than having visible trees, thus possibly changing our index value for each area. 
+
+
 ## Limitations
 #### Temporal Data Resolution Disparity
 Unfortunately, not all of the data used in this analysis was from the same year. For example, the Metro Vancouver land use data was from 2016 and had to be cross-referenced with basemap aerial imagery from 2021 to increase accuracy. However, a thorough analysis of the remaining unclassified and undeveloped polygons was made to minimize data discrepancies and ensure the reliability of the findings.
