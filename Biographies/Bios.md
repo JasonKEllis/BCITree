@@ -4,6 +4,7 @@
 
 #### David Bio:
 ![smalldave](/Photos/smalldave.png)
+
 I graduated from the University of British Columbia in 2023 with a Bachelor's degree in Urban Forestry and a minor in Urban Green-Space Management. My primary interest in GIS—encompassing data interoperability, visualizing data, managing geospatial data, deriving insights from remote sensing, and conducting geospatial analyses—is all aimed at enhancing decision-making capabilities. As I pursue the BCIT Advanced Diploma in GIS, I hope to hone my technical and programming skills, which are geared toward my interest in utilities management, natural resource management, urban planning, and data integration. During my free time, I enjoy playing PC games, exploring the outdoors, and occasionally engaging in backcountry hiking.
 
 #### Jason Bio:
