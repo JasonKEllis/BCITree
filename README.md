@@ -160,7 +160,3 @@ Part II: Running Network Analysis
 |-----------------|-----------------|-----------------|-----------------|
 | Local Area Boundary      | Vancouver Open Data      | Polyline      | [Local Area Boundary](https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name)      |
 | Dissemination Areas      | Canada Census      | Polygon      | [Dissemination Areas](https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21)      |
-
-
-
-![Comparison](Photos/ParkBufferAndServiceArea.png)
