@@ -23,3 +23,21 @@
 ![Comparison](/Photos/CanopyCoverWorklow7.png)
 
 ### Part II
+#### 1.	Run Pairwise Dissolve tool on CanopyPoly to dissolve all polygons into one multipart polygon. This will simplify the next steps.
+![Comparison](/Photos/CanopyCoverWorklow8.png)
+
+#### 2.	Run Pairwise Intersect tool with the DisseminationAreas Layer and the CanopyPoly layer. Make sure shape_area updates correctly
+![Comparison](/Photos/CanopyCoverWorklow9.png)
+
+#### 3.	Run Join Field tool on the DisseminationAreas feature class to perform a one-to-one join of the layer from step 2 to DisseminationAreas on any unique field (we chose DAUID). This will join the shape_area of the intersected layer to DisseminationAreas
+![Comparison](/Photos/CanopyCoverWorklow10.png)
+
+#### 4.	Add a field called CanopyPercentage of type double to DisseminationAreas
+![Comparison](/Photos/CanopyCoverWorklow11.png)
+
+#### 5.	Calculate this field as 100*Shape_Area_1/Shape_Area
+![Comparison](/Photos/CanopyCoverWorklow12.png)
+
+#### 6.	Repeat with VancouverNeighbourhoods but first clip to DisseminationAreas to remove the water in the neighbourhoods layer to ensure the area is accurate
+
+
