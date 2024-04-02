@@ -55,7 +55,6 @@
 ![TreeTopWorkflow4](/Photos/TreeTopWorkflow4r.png)
 
 #### 5.	Run Raster to Multipoint to create a point layer from the our raster with cells that are 1 representing local maxima:
-![TreeTopWorkflow5](/Photos/TreeTopWorkflow5.png)
 
 #### 6.	Run Clip tool with our point layer as the input and CanopyPoly as the clip feature. This removes trees that we already removed from the CanopyPoly layer for being too small to represent a tree.
 
