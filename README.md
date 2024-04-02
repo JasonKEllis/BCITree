@@ -66,7 +66,7 @@ In creating our network analysis, it is worth noting not every trail or pathway 
 Despite our extensive analysis and cleaning of lidar data, given the scale and shear amount of points, there are likely some points that were misclassified. However, the city of Vancouver completed some classification of their own for the lidar data set and were quite adequate to start for our analysis.
 
 ## Explanation of Index 
-We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To acomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
+We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To accomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
 
 ## User Guide
 
@@ -157,7 +157,7 @@ Part II: Running Network Analysis
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
 | Public Streets      | Vancouver Open Data      | PolyLine      | [Public Streets](https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21)      |
-| Vancouver Parks      | Vancouver Open Data      | Polygon      | [Vancover Parks](https://opendata.vancouver.ca/explore/dataset/public-streets/information/)      |
+| Vancouver Parks      | Vancouver Open Data      | Polygon      | [Vancouver Parks](https://opendata.vancouver.ca/explore/dataset/public-streets/information/)      |
 | Land Use      | Metro Vancouver      | Polygon      | [Land Use](https://open-data-portal-metrovancouver.hub.arcgis.com/search?q=landuse)      |
 | Burnaby Parks      | Burnaby Open Data      | Polygon      | [Burnaby Parks](https://data.burnaby.ca/datasets/a1a896a4209d4325bacacea417ffc400_6/explore?location=49.237308%2C-122.958050%2C12.70)      |
 | Property Boundaries      | Vancouver Open Data      | Polyline      | [Property Boundaries](https://opendata.vancouver.ca/explore/dataset/property-cadastral-boundaries/information/)     | 
