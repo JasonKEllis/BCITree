@@ -40,4 +40,21 @@
 
 #### 6.	Repeat with VancouverNeighbourhoods but first clip to DisseminationAreas to remove the water in the neighbourhoods layer to ensure the area is accurate
 
-# 
+# Seeing Three Trees Workflow
+### Part I Create Tree Tops Point Layer
+1.	Create LAS dataset with all 181 Vancouver 2022 LiDAR tiles and select high vegetation
+![Comparison](/Photos/TreeTopWorkflow1.png)
+
+2.	Run LAS Dataset to Raster with a cell size of 0.5 m, interpolation type of binning, cell assignment of maximum, and output data type of integer
+![Comparison](/Photos/TreeTopWorkflow2.png)
+
+3.	Run Focal Statistics tool with a 15x15 m rectangular neighbourhood (this value was determined with experimentation) and statistics type of maximum
+![Comparison](/Photos/TreeTopWorkflow3.png)
+
+4.	Run Raster Calculator tool with Con(“raster”==”rasterfocalstats”,1) to select cells that represent a local maxima
+![Comparison](/Photos/TreeTopWorkflow4.png)
+
+5.	Run Raster to Multipoint to create a point layer from the our raster with cells that are 1 representing local maxima
+![Comparison](/Photos/TreeTopWorkflow5.png)
+
+6.	Run Clip tool with our point layer as the input and CanopyPoly as the clip feature. This removes trees that we already removed from the CanopyPoly layer for being too small to represent a tree
