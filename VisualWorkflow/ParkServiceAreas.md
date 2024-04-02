@@ -1,4 +1,4 @@
-# Creating Park Service Area
+# Methodology Behind Creating Park Service Area
 
 #### In creating the park service areas, we first needed to add park vertices as entrances:
 ![Comparison](/Photos/ParkVertices.png)
