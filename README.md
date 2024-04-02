@@ -88,7 +88,7 @@ The legend colour scheme was chosen to highlight areas failing to meet the goals
 If you are interested in exporting the Index layers, please navigate to their respective map and select the data you wish to export. Once selected, click the four circles to then select the export option. If you wish to export the tree points or canopy cover polygons, you may do this from any layer following the same steps.
 
 ### Filter
-![filtertool](/Photos/xcxz.png)
+![filtertool](/Photos/FilterFinal.png)
 
 If you are wishing to visualize the polygons containing a certain range of canopy percentages or index values for example, please navigate to the filter at the bottom left of the map. Here, you can enter in values to see which polygons fall within your designated range. Note, filtering percent of people serviced by parks as well as percent of people who can see three trees was calculated as a fraction representing a percentage. In doing so, using the filter will require entering in values from 0 to 1 as percent fractions.
 
