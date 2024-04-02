@@ -46,6 +46,9 @@ The property boundary layer contained every property in Vancouver and had no att
 #### Creating canopy polygon from LiDAR data
 The 2022 Vancouver LiDAR data is well classified into tall vegetation and other categories so the work in this section is largely complete. If the data was unclassified or poorly classified a dataset this size would be a large undertaking. When creating a raster from a LAS dataset the cell size controls the resolution of the output raster and it was found that a cell size of 0.25m was found to be a good balance of retaining detail without being too cumbersome. Small polygons and small holes in polygons were later filtered out and after checking the size of many polygons a value of 0.5m was chosen for both.
 
+#### Finding the number of trees visible for each building
+This is nearly impossible to do with much accuracy as you would need an extremely detailed LiDAR dataset, window locations, and huge amounts of processing time. We have chosen a simple and easily repeatable process to get a rough estimate. We have also made a very conservative estimate and the actual tree visibility is likely higher - Vancouver is doing really well in this regard. Our process involves buffering every residential building by 30m and choosing no dissolve so we have an individual polygon buffer for each building. Then we count the number of trees in each buffer polygon and join this count back to the buildings layer. Finally we multiply the count by a factor that represents the percentage of trees that will be visible. In this case, a conservative estimate of 0.25 was used. This method could be combined with more detailed viewshed analyses in small areas or a field analysis to derive more accurate parameters.
+
 ## Limitations
 #### Temporal Data Resolution Disparity
 Unfortunately, not all of the data used in this analysis was from the same year. For example, the Metro Vancouver land use data was from 2016 and had to be cross-referenced with basemap aerial imagery from 2021 to increase accuracy. However, a thorough analysis of the remaining unclassified and undeveloped polygons was made to minimize data discrepancies and ensure the reliability of the findings.
@@ -65,8 +68,6 @@ In creating our network analysis, it is worth noting not every trail or pathway 
 #### Lidar Classificaton Issues
 Despite our extensive analysis and cleaning of lidar data, given the scale and shear amount of points, there are likely some points that were misclassified. However, the city of Vancouver completed some classification of their own for the lidar data set and were quite adequate to start for our analysis.
 
-#### Finding the number of trees visible for each building
-This is nearly impossible to do with much accuracy as you would need an extremely detailed LiDAR dataset, window locations, and huge amounts of processing time. We have chosen a simple and easily repeatable process to get a rough estimate. We have also made a very conservative estimate and the actual tree visibility is likely higher - Vancouver is doing really well in this regard. Our process involves buffering every residential building by 30m and choosing no dissolve so we have an individual polygon buffer for each building. Then we count the number of trees in each buffer polygon and join this count back to the buildings layer. Finally we multiply the count by a factor that represents the percentage of trees that will be visible. In this case, a conservative estimate of 0.25 was used. This method could be combined with more detailed viewshed analyses in small areas or a field analysis to derive more accurate parameters.
 
 
 ## Explanation of Index 
