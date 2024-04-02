@@ -93,6 +93,9 @@ The legend colour scheme was chosen to highlight areas failing to meet the goals
 #### Select/Export Function
 If you are interested in exporting the Index layers, please navigate to their respective map and select the data you wish to export. Once selected, click the four circles to then select the export option. If you wish to export the tree points or canopy cover polygons, you may do this from any layer following the same steps.
 
+#### Filter
+If you are wishing to visualize the polygons containing a certain range of canopy percentages or index values for example, please navigate to the filter at the bottom left of the map. Here, you can enter in values to see which polygons fall within your designated range.
+
 
 ## General Workflow Processes
 #### Visible Trees Analysis Workflow
