@@ -83,7 +83,7 @@ Despite our extensive analysis and cleaning of lidar data, given the scale and s
 Located on the top left of the app, a pie chart is automatically updated as the user views around the map. Just wait a few seconds to let the chart load, and it will display the breakdown of tree types in the map's extent.
 
 ### Other Products
-![TopBar](/Photos/Topbar.png)
+![TopBar](/Photos/topbar.png)
 
 Please use these buttons to navigate to our various sources; our website, user guide, and Github.
 
