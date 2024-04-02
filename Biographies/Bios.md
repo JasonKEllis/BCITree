@@ -9,8 +9,10 @@ I graduated from the University of British Columbia in 2023 with a Bachelor's de
 
 #### Jason Bio:
 ![Jason](/Photos/smalljason.png)
+
 I graduated from the University of British Columbia in 2023 with a bachelor's degree in geography and a minor in GIS. I am now studying at BCIT in their Advanced Diploma in GIS program and am also currently working at a commercial real estate company, aiding in data acquisition and map production. I am excited to use what I have learned in my studies and hope to explore the demographic side of GIS in my career. In my free time, I like to watch movies, exercise, and hang out with my friends. 
 
 #### Logan Bio
 ![Logan](/Photos/smalllogan.png)
+
 I graduated from the University of Northern British Columbia with a bachelor’s in Math and Physics in 2016. I have an interest in GIS that relates to natural resources and have had the opportunity to work with several community forest organizations. This work included silviculture surveys, mapping, and modeling. I am currently enrolled in the GIS Advanced Diploma program at BCIT and am excited to broaden my skill set. In my free time, I enjoy outdoor activities such as biking, snowboarding, and rock climbing.
