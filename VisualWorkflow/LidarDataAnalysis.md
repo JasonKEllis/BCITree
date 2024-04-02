@@ -13,48 +13,48 @@
 #### 4.	Run Raster to Polygon tool and don’t simplify polygons so we can have greater control in the next steps:
 ![Comparison](/Photos/CanopyCoverWorklow4.png)
 
-#### 5.	Run Select Layer by Attribute tool to select shapes with area greater than 0.5 m
+#### 5.	Run Select Layer by Attribute tool to select shapes with area greater than 0.5 m:
 ![Comparison](/Photos/CanopyCoverWorklow5.png)
 
-#### 6.	Run Eliminate Polygon Part tool to remove holes less than 0.5 m in area and previous polygons not selected in step 5
+#### 6.	Run Eliminate Polygon Part tool to remove holes less than 0.5 m in area and previous polygons not selected in step 5:
 ![Comparison](/Photos/CanopyCoverWorklow6.png)
 
-#### 7.	Run Generalize tool with a tolerance of 0.15 m to create CanopyPoly layer
+#### 7.	Run Generalize tool with a tolerance of 0.15 m to create CanopyPoly layer:
 ![Comparison](/Photos/CanopyCoverWorklow7.png)
 
 ### Part II
-#### 1.	Run Pairwise Dissolve tool on CanopyPoly to dissolve all polygons into one multipart polygon. This will simplify the next steps.
+#### 1.	Run Pairwise Dissolve tool on CanopyPoly to dissolve all polygons into one multipart polygon. This will simplify the next steps:
 ![Comparison](/Photos/CanopyCoverWorklow8.png)
 
-#### 2.	Run Pairwise Intersect tool with the DisseminationAreas Layer and the CanopyPoly layer. Make sure shape_area updates correctly
+#### 2.	Run Pairwise Intersect tool with the DisseminationAreas Layer and the CanopyPoly layer. Make sure shape_area updates correctly:
 ![Comparison](/Photos/CanopyCoverWorklow9.png)
 
-#### 3.	Run Join Field tool on the DisseminationAreas feature class to perform a one-to-one join of the layer from step 2 to DisseminationAreas on any unique field (we chose DAUID). This will join the shape_area of the intersected layer to DisseminationAreas
+#### 3.	Run Join Field tool on the DisseminationAreas feature class to perform a one-to-one join of the layer from step 2 to DisseminationAreas on any unique field (we chose DAUID). This will join the shape_area of the intersected layer to DisseminationAreas:
 ![Comparison](/Photos/CanopyCoverWorklow10.png)
 
-#### 4.	Add a field called CanopyPercentage of type double to DisseminationAreas
+#### 4.	Add a field called CanopyPercentage of type double to DisseminationAreas:
 ![Comparison](/Photos/CanopyCoverWorklow11.png)
 
-#### 5.	Calculate this field as 100*Shape_Area_1/Shape_Area
+#### 5.	Calculate this field as 100*Shape_Area_1/Shape_Area:
 ![Comparison](/Photos/CanopyCoverWorklow12.png)
 
-#### 6.	Repeat with VancouverNeighbourhoods but first clip to DisseminationAreas to remove the water in the neighbourhoods layer to ensure the area is accurate
+#### 6.	Repeat with VancouverNeighbourhoods but first clip to DisseminationAreas to remove the water in the neighbourhoods layer to ensure the area is accurate.
 
 # Seeing Three Trees Workflow
 ### Part I Create Tree Tops Point Layer
-1.	Create LAS dataset with all 181 Vancouver 2022 LiDAR tiles and select high vegetation
+#### 1.	Create LAS dataset with all 181 Vancouver 2022 LiDAR tiles and select high vegetation:
 ![Comparison](/Photos/TreeTopWorkflow1.png)
 
-2.	Run LAS Dataset to Raster with a cell size of 0.5 m, interpolation type of binning, cell assignment of maximum, and output data type of integer
+#### 2.	Run LAS Dataset to Raster with a cell size of 0.5 m, interpolation type of binning, cell assignment of maximum, and output data type of integer:
 ![Comparison](/Photos/TreeTopWorkflow2.png)
 
-3.	Run Focal Statistics tool with a 15x15 m rectangular neighbourhood (this value was determined with experimentation) and statistics type of maximum
+#### 3.	Run Focal Statistics tool with a 15x15 m rectangular neighbourhood (this value was determined with experimentation) and statistics type of maximum:
 ![Comparison](/Photos/TreeTopWorkflow3.png)
 
-4.	Run Raster Calculator tool with Con(“raster”==”rasterfocalstats”,1) to select cells that represent a local maxima
+#### 4.	Run Raster Calculator tool with Con(“raster”==”rasterfocalstats”,1) to select cells that represent a local maxima:
 ![Comparison](/Photos/TreeTopWorkflow4.png)
 
-5.	Run Raster to Multipoint to create a point layer from the our raster with cells that are 1 representing local maxima
+#### 5.	Run Raster to Multipoint to create a point layer from the our raster with cells that are 1 representing local maxima:
 ![Comparison](/Photos/TreeTopWorkflow5.png)
 
-6.	Run Clip tool with our point layer as the input and CanopyPoly as the clip feature. This removes trees that we already removed from the CanopyPoly layer for being too small to represent a tree
+#### 6.	Run Clip tool with our point layer as the input and CanopyPoly as the clip feature. This removes trees that we already removed from the CanopyPoly layer for being too small to represent a tree.
