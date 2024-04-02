@@ -43,6 +43,8 @@ Due to network analysis being constrained to a point-to-point logic, the park po
 #### Cleaning Property boundaries
 The property boundary layer contained every property in Vancouver and had no attribute data to discern between residential properties and other properties not being used in this analysis. Metro Vancouver land use data from 2016 was used to overlay onto the property boundaries and any property boundaries which did not intersect with the various housing land use polygons were discarded. However, there were 346 polygons labeled as unclassified or undeveloped which were cross referenced with an aerial imagery basemap to discern if any of the polygons were either housing properties or parks. From the 346 polygons, 138 were classified as housing, and 3 were classified as parks larger than 1 hectare.
 
+#### Creating canopy polygon from LiDAR data
+The 2022 Vancouver LiDAR data is well classified into tall vegetation and other categories so the work in this section is largely complete. If the data was unclassified or poorly classified a dataset this size would be a large undertaking. When creating a raster from a LAS dataset the cell size controls the resolution of the output raster and it was found that a cell size of 0.25m was found to be a good balance of retaining detail without being too cumbersome. Small polygons and small holes in polygons were later filtered out and after checking the size of many polygons a value of 0.5m was chosen for both.
 
 ## Limitations
 #### Temporal Data Resolution Disparity
