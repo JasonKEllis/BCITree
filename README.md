@@ -58,12 +58,20 @@ The property boundary layer contained every property in vancouver and had no att
 ##### Temporal Data Resolution Disparity
 Unfortunately, not all of the data used in this analysis was from the same year. For example, the Metro Vancouver land use data was from 2016 and had to be cross-referenced with basemap aerial imagery from 2021 to increase accuracy. However, a thorough analysis of the remaining unclassified and undeveloped polygons was made to minimize data discrepancies and ensure the reliability of the findings.
 
+##### Vancouver Street Tree Data Quality
+We had many doubts on the maintenance quality of the Vancouver Street Tree dataset so we chose to derive our own tree dataset using lidar gathered in 2022. From our findings, we gathered that it was right to create our own dataset as many trees were unaccounted for in the vancouver dataset and would not have been adequate for our analysis had we used it.
 
+##### "Seeing" Three Trees
+The first part of the 3-30-300 goal is that people should be able to see three trees from their house. The questions then are how far does each person see from their house? where is every window in Vancouver? are there any obstructions? All of these questions could only be answered with an extensive analysis which we did not have time nor the data for. Instead, we decided every person, given obstructions, could see 25% of trees within a 30m buffer of ones house. We chose these parameters to ensure a conservitive analysis of visible trees. However, even with the conservitive take on this goal of visible trees, roughly 98% of all homes in Vancouver are able to see three trees. Because of this conservitive analysis and the immense success of visible trees in Vancouver, we felt confident to utilize the findings of this analysis.
 
+##### Definition of Park Service
+The 3-30-300 goal specifically looks at whether a park is within 300 meters of a home which drove our approach in this analysis. We think the 3-30-300 goal should also analyze whether a park meets a certain quality such as amenities, safety and ecological value. Future analyses related to this project could be to judge each park's quality and whether or not they are fit to still be considered an adequate park in this analysis.
 
+##### Vancouver Street Data Quality
+In creating our network analysis, it is worth noting not every trail or pathway is located in Vancouvers data repository. Therefore, over the area of Vancouver, there may be some homes which are within 300 meters of a park but given certain paths were not included in the network, were not counted as being serviced. Nevertheless, this is a minor discrepency in the data given the scale.
 
-
-
+##### Lidar Classificaton Issues
+Despite our extensive analysis and cleaning of lidar data, given the scale and shear amount of points, there are likely some points that were misclassified. However, the city of Vancouver completed some classification of their own for the lidar data set and were quite adequate to start for our analysis.
 
 ## Explanation of Index 
 We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To acomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
@@ -150,7 +158,7 @@ Part II: Running Network Analysis
 ##### General Data Used for all Analyses
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
-| Local Area Boundary      | Vancover Open Data      | Polyline      | [Local Area Boundary](https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name)      |
+| Local Area Boundary      | Vancouver Open Data      | Polyline      | [Local Area Boundary](https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name)      |
 | Dissemination Areas      | Canada Census      | Polygon      | [Dissemination Areas](https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21)      |
 
 
