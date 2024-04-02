@@ -85,7 +85,7 @@ Located on the top left of the app, a pie chart is automatically updated as the 
 Please use these buttons to navigate to our various sources; our website, user guide, and Github.
 
 #### Navigation Buttons
-These buttons will help you navigate from the main map displaying our created index of Vancouver as well as the sub-maps displaying the individual 3-30-300 analyses. Also make sure to use the button to change between displaying Local Area Boundaries and Dissemination areas 
+These buttons will help you navigate from the main map displaying our created index of Vancouver as well as the sub-maps displaying the individual 3-30-300 analyses. Also make sure to use the button to change between displaying Local Area Boundaries and Dissemination Areas. 
 
 #### Legend
 The legend colour scheme was chosen to highlight areas failing to meet the goals of the 3-30-300 target. The greens signify areas which are either meeting the goal or are close enough where there is no immediate action needed. The brown areas on the other hand are areas where future development and consideration could be needed. Areas with low index ratings should especially be considered for future urban forest development to increase Vancouver's green space equity.
