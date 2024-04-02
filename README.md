@@ -34,7 +34,7 @@ BCITree aims to create an app which facilitates citizen engagement in urban fore
 
 ## Methodology and Justification
 
-#### Calculating park service area
+#### Calculating Park Service Area
 A simpler method of calculating which houses are within 300 meters of a park would be to use a buffer. However, this buffer uses a euclidean distance which does not accurately describe a property’s accessibility to a park. Instead, we used ArcGIS’s Network Analyst extension to create a service area using their service area analysis toolset. Using Vancouver streets as the network, a more accurate representation of the park’s service area was created.
 
 #### Using Park Vertices as Entrances
@@ -43,10 +43,10 @@ Due to network analysis being constrained to a point-to-point logic, the park po
 #### Cleaning Property boundaries
 The property boundary layer contained every property in Vancouver and had no attribute data to discern between residential properties and other properties not being used in this analysis. Metro Vancouver land use data from 2016 was used to overlay onto the property boundaries and any property boundaries which did not intersect with the various housing land use polygons were discarded. However, there were 346 polygons labeled as unclassified or undeveloped which were cross referenced with an aerial imagery basemap to discern if any of the polygons were either housing properties or parks. From the 346 polygons, 138 were classified as housing, and 3 were classified as parks larger than 1 hectare.
 
-#### Creating canopy polygon from LiDAR data
+#### Creating Canopy Polygon from LiDAR Data
 The 2022 Vancouver LiDAR data is well classified into tall vegetation and other categories so the work in this section is largely complete. If the data was unclassified or poorly classified a dataset this size would be a large undertaking. When creating a raster from a LAS dataset the cell size controls the resolution of the output raster and it was found that a cell size of 0.25m was found to be a good balance of retaining detail without being too cumbersome. Small polygons and small holes in polygons were later filtered out and after checking the size of many polygons a value of 0.5m was chosen for both.
 
-#### Finding the number of trees visible for each building
+#### Finding the Number of Trees Visible for each Building
 This is nearly impossible to do with much accuracy as you would need an extremely detailed LiDAR dataset, window locations, and huge amounts of processing time. We have chosen a simple and easily repeatable process to get a rough estimate. We have also made a very conservative estimate and the actual tree visibility is likely higher - Vancouver is doing really well in this regard. Our process involves buffering every residential building by 30m and choosing no dissolve so we have an individual polygon buffer for each building. Then we count the number of trees in each buffer polygon and join this count back to the buildings layer. Finally we multiply the count by a factor that represents the percentage of trees that will be visible. In this case, a conservative estimate of 0.25 was used. This method could be combined with more detailed viewshed analyses in small areas or a field analysis to derive more accurate parameters.
 
 ## Limitations
