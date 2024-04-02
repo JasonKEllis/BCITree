@@ -66,6 +66,21 @@ Despite our extensive analysis and cleaning of lidar data, given the scale and s
 ## Explanation of Index 
 We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To acomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
 
+## User Guide
+
+
+## Picture of Canopy Cover extent chart
+Located on the top left of the app, a pie chart is automatically updated as the user views around the map. Just wait a few seconds to let the chart load, and it will display the breakdown of tree types in the map's extent
+
+
+## Picture of buttons on top right
+Please use these buttons to navigate to our various sources. The website 
+
+
+
+
+
+
 ## General Workflow Processes
 #### Visible Trees Analysis Workflow
 Part I: Create TreeTops point layer
