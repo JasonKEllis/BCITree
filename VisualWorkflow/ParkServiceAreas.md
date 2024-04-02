@@ -4,7 +4,7 @@
 ![Comparison](/Photos/ParkVertices.png)
 
 ##### After the vertices were added as entrances, they were then snapped to the closest line on the network dataset created earlier with Vancouver street data:
-![Comparison](/Photos/ParkNetwrokEntrances.png)
+![Comparison](/Photos/ParkNetworkEntrances.png)
 
 ##### Finally a network service area analysis was run to configure a final service area:
 ![Comparison](/Photos/ParkServiceArea.png)
