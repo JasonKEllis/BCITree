@@ -6,16 +6,6 @@ An application directed towards analyzing urban forestry coverage and distributi
 - Jason Ellis
 - Logan Salayka-Ladouceur
 
-### Group Biographies
-#### David
-I graduated from the University of British Columbia in 2023 with a Bachelor's degree in Urban Forestry and a minor in Urban Green-Space Management. My primary interest in GIS—encompassing data interoperability, visualizing data, managing geospatial data, deriving insights from remote sensing, and conducting geospatial analyses—is all aimed at enhancing decision-making capabilities. As I pursue the BCIT Advanced Diploma in GIS, I hope to hone my technical and programming skills, which are geared toward my interest in utilities management, natural resource management, urban planning, and data integration. During my free time, I enjoy playing PC games, exploring the outdoors, and occasionally engaging in backcountry hiking.
-
-#### Jason
-I graduated from the University of British Columbia in 2023 with a bachelor's degree in geography and a minor in GIS. I am now studying at BCIT in their Advanced Diploma in GIS program and am also currently working at a commercial real estate company, aiding in data acquisition and map production. I am excited to use what I have learned in my studies and hope to explore the demographic side of GIS in my career. In my free time, I like to watch movies, exercise, and hang out with my friends.  
-
-#### Logan
-I graduated from the University of Northern British Columbia with a bachelor’s in Math and Physics in 2016. I have an interest in GIS that relates to natural resources and have had the opportunity to work with several community forest organizations. This work included silviculture surveys, mapping, and modeling. I am currently enrolled in the GIS Advanced Diploma program at BCIT and am excited to broaden my skill set. In my free time, I enjoy outdoor activities such as biking, snowboarding, and rock climbing.
-
 ## Mission Statement
 In 2018, the United Nations predicted that 68% of the global population will be living in urban areas by 2050 (1). Urbanization and the expansion of built-up areas to accommodate growing urban populations have accelerated deforestation globally. The average global urban tree cover declines by 40,000 hectares each year (2). Trees provide essential ecosystem services in urban environments for humans, such as wind breaks, shade, air pollution removal, stormwater regulation, and carbon storage and sequestration, and even provide physical and mental health benefits (3). These are all direct and indirect benefits from urban trees that benefit both the environment and human well-being. 
 
@@ -44,40 +34,40 @@ BCITree aims to facilitate citizen engagement in urban forestry by providing the
 
 ## Methodology and Justification
 
-#### Calculating park service area
+### Calculating park service area
 A simpler method of calculating which houses are within 300 meters of a park would be to use a buffer. However, this buffer uses a euclidean distance which does not accurately describe a property’s accessibility to a park. Instead, we used ArcGIS’s Network Analyst extension to create a service area using their service area analysis toolset. Using Vancouver streets as the network, a more accurate representation of the park’s service area was created.
 
-#### Using Park Vertices as Entrances
+### Using Park Vertices as Entrances
 Due to network analysis being constrained to a point-to-point logic, the park polygons were turned into points using the feature vertices to points tool. These vertices provide a good approximation of where pedestrians may enter these parks from.
 
-#### Cleaning Property boundaries
+### Cleaning Property boundaries
 The property boundary layer contained every property in vancouver and had no attribute data to discern between residential properties and other properties not being used in this analysis. Metro Vancouver land use data from 2016 was used to overlay onto the property boundaries and any property boundaries which did not intersect with the various housing land use polygons were discarded. However, there were 346 polygons labeled as unclassified or undeveloped which were cross referenced with an aerial imagery basemap to discern if any of the polygons were either housing properties or parks. From the 346 polygons, 138 were classified as housing, and 3 were classified as parks larger than 1 hectare.
 
 
 ## Limitations
-#### Temporal Data Resolution Disparity
+### Temporal Data Resolution Disparity
 Unfortunately, not all of the data used in this analysis was from the same year. For example, the Metro Vancouver land use data was from 2016 and had to be cross-referenced with basemap aerial imagery from 2021 to increase accuracy. However, a thorough analysis of the remaining unclassified and undeveloped polygons was made to minimize data discrepancies and ensure the reliability of the findings.
 
-#### Vancouver Street Tree Data Quality
+### Vancouver Street Tree Data Quality
 We had many doubts on the maintenance quality of the Vancouver Street Tree dataset so we chose to derive our own tree dataset using lidar gathered in 2022. From our findings, we gathered that it was right to create our own dataset as many trees were unaccounted for in the vancouver dataset and would not have been adequate for our analysis had we used it.
 
-#### "Seeing" Three Trees
+### "Seeing" Three Trees
 The first part of the 3-30-300 goal is that people should be able to see three trees from their house. The questions then are how far does each person see from their house? where is every window in Vancouver? are there any obstructions? All of these questions could only be answered with an extensive analysis which we did not have time nor the data for. Instead, we decided every person, given obstructions, could see 25% of trees within a 30m buffer of ones house. We chose these parameters to ensure a conservitive analysis of visible trees. However, even with the conservitive take on this goal of visible trees, roughly 98% of all homes in Vancouver are able to see three trees. Because of this conservitive analysis and the immense success of visible trees in Vancouver, we felt confident to utilize the findings of this analysis.
 
-#### Definition of Park Service
+### Definition of Park Service
 The 3-30-300 goal specifically looks at whether a park is within 300 meters of a home which drove our approach in this analysis. We think the 3-30-300 goal should also analyze whether a park meets a certain quality such as amenities, safety and ecological value. Future analyses related to this project could be to judge each park's quality and whether or not they are fit to still be considered an adequate park in this analysis.
 
-#### Vancouver Street Data Quality
+### Vancouver Street Data Quality
 In creating our network analysis, it is worth noting not every trail or pathway is located in Vancouvers data repository. Therefore, over the area of Vancouver, there may be some homes which are within 300 meters of a park but given certain paths were not included in the network, were not counted as being serviced. Nevertheless, this is a minor discrepency in the data given the scale.
 
-#### Lidar Classificaton Issues
+### Lidar Classificaton Issues
 Despite our extensive analysis and cleaning of lidar data, given the scale and shear amount of points, there are likely some points that were misclassified. However, the city of Vancouver completed some classification of their own for the lidar data set and were quite adequate to start for our analysis.
 
 ## Explanation of Index 
 We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To acomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
 
 ## General Workflow Processes
-#### Visible Trees Analysis Workflow
+### Visible Trees Analysis Workflow
 Part I: Create TreeTops point layer
 
 1. Create LAS dataset with all 181 Vancouver 2022 LiDAR tiles and select high vegetation.
@@ -94,7 +84,7 @@ Part II: Find Number of trees near each building.
 4. Add a field in buildings layer called VisibleTrees.
 5. Calculate field for VisibleTrees by multiplying PointCount by a factor representing the average percentage of nearby trees that are visible.
 
-#### Canopy Cover Workflow
+### Canopy Cover Workflow
 
 Part I: Create city-wide canopy cover polygon
 
@@ -114,7 +104,7 @@ Part II: Calculate Percentage
 5. Calculate this field as 100*Shape_Area_1/Shape_Area.
 6. Repeat with VancouverNeighbourhoods but first clip to DisseminationAreas to remove the water in the neighbourhoods layer to ensure the area is accurate.
 
-#### Park Service Area Workflow
+### Park Service Area Workflow
 
 Part I: Cleaning Data
 1. Combine park datasets and filter out any parks under a hectare.
@@ -134,19 +124,19 @@ Part II: Running Network Analysis
 
 ## Data Sources
 
-##### Data Used for Visible Tree Analysis
+#### Data Used for Visible Tree Analysis
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
 | Vancouver Lidar      | Vancouver Open Data      | Point      | [Vancouver Lidar Data](https://opendata.vancouver.ca/explore/dataset/lidar-2022/information/)      |
 | Land Use      | Metro Vancouver      | Polygon      | [Land Use](https://open-data-portal-metrovancouver.hub.arcgis.com/search?q=landuse)      |
 | Property Boundaries      | Vancouver Open Data      | Polyline      | [Property Boundaries](https://opendata.vancouver.ca/explore/dataset/property-cadastral-boundaries/information/)     | 
 
-##### Data Used for Canopy Cover Analysis
+#### Data Used for Canopy Cover Analysis
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
 | Vancouver Lidar      | Vancouver Open Data      | Point      | [Vancouver Lidar Data](https://opendata.vancouver.ca/explore/dataset/lidar-2022/information/)      |
 
-##### Data Used for Park Analysis
+#### Data Used for Park Analysis
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
 | Public Streets      | Vancouver Open Data      | PolyLine      | [Public Streets](https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21)      |
@@ -155,7 +145,7 @@ Part II: Running Network Analysis
 | Burnaby Parks      | Burnaby Open Data      | Polygon      | [Burnaby Parks](https://data.burnaby.ca/datasets/a1a896a4209d4325bacacea417ffc400_6/explore?location=49.237308%2C-122.958050%2C12.70)      |
 | Property Boundaries      | Vancouver Open Data      | Polyline      | [Property Boundaries](https://opendata.vancouver.ca/explore/dataset/property-cadastral-boundaries/information/)     | 
 
-##### General Data Used for all Analyses
+#### General Data Used for all Analyses
 | Data Name | Data Source | Data Type | Data Link |
 |-----------------|-----------------|-----------------|-----------------|
 | Local Area Boundary      | Vancouver Open Data      | Polyline      | [Local Area Boundary](https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name)      |
