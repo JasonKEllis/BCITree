@@ -2,6 +2,7 @@
 
 ### Creating Park Service Area
 In creating the park service areas, we first needed to add park vertices as entrances:
+![ParkVertices](path_to_your_image)
 
 After the vertices were added as entrances, they were then snapped to the closest line on the network dataset created earlier with Vancouver street data:
 
