@@ -17,21 +17,6 @@ Furthermore, engaging citizens in the urban forest and monitoring the status and
 
 BCITree aims to create an app which facilitates citizen engagement in urban forestry by providing the public audience, including those interested in urban forestry, urban planning, landscape architecture, public health, and their local municipality, with the ability to visualize the state of canopy coverage and the distribution of the 3-30-300 tree equity rule. By providing this visualization, we hope that citizens can better understand the current distribution of urban tree ecosystem services and Vancouver's progress towards the 30% canopy target by 2050. Additionally, citizens can use this information to advocate for addressing tree inequity and the implementation of the 3-30-300 rule to decision-makers. This tool also enables planners and relevant stakeholders to approximate canopy coverage and identify areas in need of attention before a formal tree inventory can be commissioned by the City of Vancouver, supporting more equitable urban forest planning and management.
 
-#### Literature Sources
-(1) https://www.un.org/development/desa/pd/content/urbanization-0
-
-(2) https://www.fs.usda.gov/research/treesearch/59488
-
-(3) https://ehjournal.biomedcentral.com/articles/10.1186/s12940-016-0103-6
-
-(4) https://parkboardmeetings.vancouver.ca/2020/20201207/REPORT-UrbanForestStrategyUpdate-20201207.pdf
-
-(5) https://naturecanada.ca/wp-content/uploads/2022/09/Nature-Canada-Report-Tree-Equity.pdf
-
-(6) https://www.sciencedirect.com/science/article/abs/pii/S0048969723063660
-
-(7) https://vancouver.ca/files/cov/urban-forest-strategy.pdf
-
 ## Explanation of Index 
 We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To accomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
 
@@ -192,3 +177,38 @@ Part II: Running Network Analysis
 |-----------------|-----------------|-----------------|-----------------|
 | Local Area Boundary      | Vancouver Open Data      | Polyline      | [Local Area Boundary](https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name)      |
 | Dissemination Areas      | Canada Census      | Polygon      | [Dissemination Areas](https://www12.statcan.gc.ca/census-recensement/2021/geo/sip-pis/boundary-limites/index2021-eng.cfm?year=21)      |
+
+#### Literature Sources
+[(1) https://www.un.org/development/desa/pd/content/urbanization-0](https://www.un.org/development/desa/pd/content/urbanization-0)
+
+[(2) https://www.fs.usda.gov/research/treesearch/59488](https://www.fs.usda.gov/research/treesearch/59488)
+
+[(3) https://ehjournal.biomedcentral.com/articles/10.1186/s12940-016-0103-6](https://ehjournal.biomedcentral.com/articles/10.1186/s12940-016-0103-6)
+
+[(4) https://parkboardmeetings.vancouver.ca/2020/20201207/REPORT-UrbanForestStrategyUpdate-20201207.pdf](https://parkboardmeetings.vancouver.ca/2020/20201207/REPORT-UrbanForestStrategyUpdate-20201207.pdf)
+
+[(5) https://naturecanada.ca/wp-content/uploads/2022/09/Nature-Canada-Report-Tree-Equity.pdf](https://naturecanada.ca/wp-content/uploads/2022/09/Nature-Canada-Report-Tree-Equity.pdf)
+
+[(6) https://www.sciencedirect.com/science/article/abs/pii/S0048969723063660](https://www.sciencedirect.com/science/article/abs/pii/S0048969723063660)
+
+[(7) https://vancouver.ca/files/cov/urban-forest-strategy.pdf](https://vancouver.ca/files/cov/urban-forest-strategy.pdf)
+
+
+#### Sources Used in Video:
+
+[Clouds over Vancouver](https://www.pexels.com/video/clouds-over-vancouver-11331080/)
+
+[Drone Footage](https://www.pexels.com/video/drone-footage-of-the-city-of-vancouver-11331041/)
+
+[Drone Footage](https://www.pexels.com/video/drone-footage-of-vancouver-14569358/)
+
+[City Timelapse](https://www.pexels.com/video/time-lapse-video-of-a-city-and-buildings-6049316/)
+
+[Bridge Timelapse](https://www.pexels.com/video/timelapse-videos-of-cars-crossing-the-second-narrows-bridge-6009677/)
+
+[Vancouver Skyline](https://www.pexels.com/video/the-skyline-of-vancouver-canada-at-daytime-4898681/)
+
+[Playground Park](https://www.pexels.com/video/sports-playground-in-park-in-vancouver-11331029/)
+
+[Traffic Sound](https://freesound.org/people/ania635/sounds/691516/)
+
