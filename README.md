@@ -80,11 +80,12 @@ Despite our extensive analysis and cleaning of lidar data, given the scale and s
 #### Distribution of Tree Type Pie Chart
 Located on the top left of the app, a pie chart is automatically updated as the user views around the map. Just wait a few seconds to let the chart load, and it will display the breakdown of tree types in the map's extent.
 
-
 #### Other Products
 Please use these buttons to navigate to our various sources; our website, user guide, and Github.
 
 #### Navigation Buttons
+![ButtonBar](/Photos/buttonbar.png)
+
 These buttons will help you navigate from the main map displaying our created index of Vancouver as well as the sub-maps displaying the individual 3-30-300 analyses. Also make sure to use the button to change between displaying Local Area Boundaries and Dissemination Areas. 
 
 #### Legend
@@ -95,7 +96,7 @@ If you are interested in exporting the Index layers, please navigate to their re
 
 #### Filter
 If you are wishing to visualize the polygons containing a certain range of canopy percentages or index values for example, please navigate to the filter at the bottom left of the map. Here, you can enter in values to see which polygons fall within your designated range. Note, filtering percent of people serviced by parks as well as percent of people who can see three trees was calculated as a fraction representing a percentage. In doing so, using the filter will require entering in values from 0 to 1 as percent fractions.
-
+![filtertool](/Photos/filtertool.png)
 
 ## General Workflow Processes
 #### Visible Trees Analysis Workflow
