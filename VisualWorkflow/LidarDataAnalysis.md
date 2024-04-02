@@ -46,13 +46,13 @@
 ![TreeTopWorkflow1](/Photos/TreeTopWorkflow1.png)
 
 #### 2.	Run LAS Dataset to Raster with a cell size of 0.5 m, interpolation type of binning, cell assignment of maximum, and output data type of integer:
-![TreeTopWorkflow2](/Photos/TreeTopWorkflow2.png)
+![TreeTopWorkflow2](/Photos/TreeTopWorkflow2r.png)
 
 #### 3.	Run Focal Statistics tool with a 15x15 m rectangular neighbourhood (this value was determined with experimentation) and statistics type of maximum:
-![TreeTopWorkflow3](/Photos/TreeTopWorkflow3.png)
+![TreeTopWorkflow3](/Photos/TreeTopWorkflow3r.png)
 
 #### 4.	Run Raster Calculator tool with Con(“raster”==”rasterfocalstats”,1) to select cells that represent a local maxima:
-![TreeTopWorkflow4](/Photos/TreeTopWorkflow4.png)
+![TreeTopWorkflow4](/Photos/TreeTopWorkflow4r.png)
 
 #### 5.	Run Raster to Multipoint to create a point layer from the our raster with cells that are 1 representing local maxima:
 ![TreeTopWorkflow5](/Photos/TreeTopWorkflow5.png)
