@@ -11,4 +11,4 @@ Finally a network service area analysis was run to configure a final service are
 
 
 Here is a comparison of what a 300 meter buffer would look like compared to the network derived service area:
-![Buffer and service Comparison](BCITree/Visual Breakdown of Analyses/ParkBufferAndServiceArea.png)
+![Buffer and service Comparison](Visual Breakdown of Analyses/ParkBufferAndServiceArea.png)
