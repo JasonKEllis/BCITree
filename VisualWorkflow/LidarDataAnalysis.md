@@ -58,3 +58,16 @@
 ![Comparison](/Photos/TreeTopWorkflow5.png)
 
 #### 6.	Run Clip tool with our point layer as the input and CanopyPoly as the clip feature. This removes trees that we already removed from the CanopyPoly layer for being too small to represent a tree.
+
+### Part II Find Number of Trees Near Individual Buildings
+
+1.	Run the Buffer tool on the residential property polygon layer from 300m park workflow by 30m and set to no dissolve ending up with a unique polygon buffer for each building.
+
+
+2.	Run Summarize Within tool for this buffered layer and the TreeTops point layer to find the number of trees in each buffer
+
+3.  Run Add Join tool to join this summarized layer to the buildings layer so we have the point count in the buildings layer
+
+4.	Add a field in buildings layer called VisibleTrees
+   
+5.	Calculate field for VisibleTrees by multiplying PointCount by a factor representing the average percentage of nearby trees that are visible. In our case 0.25 seemed to provide decent results (more experimentation would be needed to figure out an accurate value for this and the buffer distance)
