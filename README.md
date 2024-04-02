@@ -32,6 +32,9 @@ BCITree aims to create an app which facilitates citizen engagement in urban fore
 
 (7) https://vancouver.ca/files/cov/urban-forest-strategy.pdf
 
+## Explanation of Index 
+We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To accomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
+
 ## Methodology and Justification
 
 #### Calculating Park Service Area
@@ -70,23 +73,22 @@ Despite our extensive analysis and cleaning of lidar data, given the scale and s
 
 
 
-## Explanation of Index 
-We at BCITree wanted to create a single value to help determine a neighbourhood's level of urban forestry and how close it is to meeting the 3-30-300 goal. To accomplish this task, we gathered the percent of people within a park's service area, the percent of people able to see three trees, and the canopy cover percent. The canopy cover value first had to be normalized, as a value of 30% or more represented the neighbourhood hitting the goal of canopy coverage. The canopy coverage percent was divided by 30 with any values above 1, meaning a canopy coverage of more than 30%, being changed to 1 to signify they have met the goal. The two previous percent values along with the normalized canopy coverage value were then averaged to obtain a final index value. This index could also be seen as a percentage as it represents how close a neighbourhood is to meeting the 3-30-300 goal of urban forestry equity.
 
 ## User Guide
 
 
-## Picture of Canopy Cover extent chart
+## Distribution of Tree Type Pie Chart
 Located on the top left of the app, a pie chart is automatically updated as the user views around the map. Just wait a few seconds to let the chart load, and it will display the breakdown of tree types in the map's extent.
 
 
-## Picture of buttons on top right
+## Other Products
 Please use these buttons to navigate to our various sources; our website, user guide, and Github.
 
-## Picture of buttons on the bottom
+## Navigation Buttons
 These buttons will help you navigate from the main map displaying our created index of Vancouver as well as the sub-maps displaying the individual 3-30-300 analyses. Also make sure to use the button to change between displaying Local Area Boundaries and Dissemination areas 
 
-
+## Legend
+The legend colour scheme was chosen to highlight areas failing to meet the goals of the 3-30-300 target. The greens signify areas which are either meeting the goal or are close enough where there is no immediate action needed. The brown areas on the other hand are areas where future development and consideration could be needed. Areas with low index ratings should especially be considered for future urban forest development to increase Vancouver's green space equity.
 
 
 ## General Workflow Processes
