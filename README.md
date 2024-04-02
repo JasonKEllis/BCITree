@@ -22,43 +22,42 @@ We at BCITree wanted to create a single value to help determine a neighbourhood'
 
 ## Methodology and Justification
 
-#### Calculating Park Service Area
-A simpler method of calculating which houses are within 300 meters of a park would be to use a buffer. However, this buffer uses a euclidean distance which does not accurately describe a property’s accessibility to a park. Instead, we used ArcGIS’s Network Analyst extension to create a service area using their service area analysis toolset. Using Vancouver streets as the network, a more accurate representation of the park’s service area was created.
+### Calculating Park Service Area
+To determine which residential properties are within 300 meters of a park, a more precise method than a simple Euclidean distance buffer was employed. Utilizing ArcGIS's Network Analyst extension, a service area was generated using the service area analysis toolset, with Vancouver streets serving as the network. This approach provides a more accurate representation of a park's service area, considering the actual accessibility of properties to parks.
 
-#### Using Park Vertices as Entrances
-Due to network analysis being constrained to a point-to-point logic, the park polygons were turned into points using the feature vertices to points tool. These vertices provide a good approximation of where pedestrians may enter these parks from.
+### Using Park Vertices as Entrances
+Due to the point-to-point logic constraints of network analysis, park polygons were converted into points using the feature vertices to points tool. These vertices serve as approximations of pedestrian entry points into the parks.
 
-#### Cleaning Property boundaries
-The property boundary layer contained every property in Vancouver and had no attribute data to discern between residential properties and other properties not being used in this analysis. Metro Vancouver land use data from 2016 was used to overlay onto the property boundaries and any property boundaries which did not intersect with the various housing land use polygons were discarded. However, there were 346 polygons labeled as unclassified or undeveloped which were cross referenced with an aerial imagery basemap to discern if any of the polygons were either housing properties or parks. From the 346 polygons, 138 were classified as housing, and 3 were classified as parks larger than 1 hectare.
+### Cleaning Property Boundaries
+The property boundary layer, which contained all properties in Vancouver, lacked attribute data to distinguish between residential properties and other properties not relevant to this analysis. To address this, Metro Vancouver land use data from 2016 was overlaid onto the property boundaries, and any boundaries not intersecting with housing land use polygons were removed. Additionally, 346 polygons classified as unclassified or undeveloped were cross-referenced with aerial imagery to determine if they represented housing properties or parks. Of these polygons, 138 were classified as housing, and 3 were identified as parks larger than 1 hectare.
 
-#### Creating Canopy Polygon from LiDAR Data
-The 2022 Vancouver LiDAR data is well classified into tall vegetation and other categories so the work in this section is largely complete. If the data was unclassified or poorly classified a dataset this size would be a large undertaking. When creating a raster from a LAS dataset the cell size controls the resolution of the output raster and it was found that a cell size of 0.25m was found to be a good balance of retaining detail without being too cumbersome. Small polygons and small holes in polygons were later filtered out and after checking the size of many polygons a value of 0.5m was chosen for both.
+### Creating Canopy Polygon from LiDAR Data
+The 2022 Vancouver LiDAR data is well-classified into tall vegetation and other categories, simplifying the work in this section. For unclassified or poorly classified datasets of this size, the process would be more challenging. When creating a raster from a LAS dataset, the cell size determines the output raster's resolution. A cell size of 0.25m was found to strike a balance between retaining detail and maintaining manageable data. Small polygons and holes in polygons were later filtered out, with a value of 0.5m chosen for both based on an analysis of polygon sizes.
 
-#### Finding the Number of Trees Visible for each Building
-This is nearly impossible to do with much accuracy as you would need an extremely detailed LiDAR dataset, window locations, and huge amounts of processing time. We have chosen a simple and easily repeatable process to get a rough estimate. We have also made a very conservative estimate and the actual tree visibility is likely higher - Vancouver is doing really well in this regard. Our process involves buffering every residential building by 30m and choosing no dissolve so we have an individual polygon buffer for each building. Then we count the number of trees in each buffer polygon and join this count back to the buildings layer. Finally we multiply the count by a factor that represents the percentage of trees that will be visible. In this case, a conservative estimate of 0.25 was used. This method could be combined with more detailed viewshed analyses in small areas or a field analysis to derive more accurate parameters.
-
-#### Calculating Index
-It is worth noting that in creating our Index, we equally weighted the three different analysis layers. It may be that in future analyses, canopy cover and distance to parks will be seen as more important than having visible trees, thus possibly changing our index value for each area. 
-
+### Finding the Number of Trees Visible for each Building
+Accurately determining the number of visible trees for each building is a complex task, requiring highly detailed LiDAR data, window locations, and significant processing time. A simple and easily repeatable process was chosen to obtain a rough estimate, with the understanding that the actual tree visibility is likely higher, as Vancouver performs well in this regard. The process involves buffering each residential building by 30m without dissolving, creating individual polygon buffers for each building. The number of trees within each buffer polygon is then counted and joined back to the buildings layer. Finally, the count is multiplied by a factor representing the percentage of visible trees, with a conservative estimate of 0.25 used in this case. This method could be combined with more detailed viewshed analyses in small areas or field analysis to derive more accurate parameters.
 
 ## Limitations
-#### Temporal Data Resolution Disparity
-Unfortunately, not all of the data used in this analysis was from the same year. For example, the Metro Vancouver land use data was from 2016 and had to be cross-referenced with basemap aerial imagery from 2021 to increase accuracy. However, a thorough analysis of the remaining unclassified and undeveloped polygons was made to minimize data discrepancies and ensure the reliability of the findings.
+### 3-30-300 Index Calculation
+It is important to acknowledge that in the creation of the Index, equal weight was assigned to the three different analysis layers. Future analyses may reveal that canopy cover and distance to parks are of greater significance than the visibility of trees, potentially leading to adjustments in the index value for each area.
 
-#### Vancouver Street Tree Data Quality
-We had many doubts on the maintenance quality of the Vancouver Street Tree dataset so we chose to derive our own tree dataset using lidar gathered in 2022. From our findings, we gathered that it was right to create our own dataset as many trees were unaccounted for in the vancouver dataset and would not have been adequate for our analysis had we used it.
+### Temporal Data Resolution Disparity
+A limitation of this analysis is the inconsistency in the temporal resolution of the data used. For instance, the Metro Vancouver land use data from 2016 required cross-referencing with basemap aerial imagery from 2021 to enhance accuracy. To mitigate data discrepancies and ensure the reliability of the findings, a comprehensive analysis of the remaining unclassified and undeveloped polygons was conducted.
 
-#### "Seeing" Three Trees
-The first part of the 3-30-300 goal is that people should be able to see three trees from their house. The questions then are how far does each person see from their house? where is every window in Vancouver? are there any obstructions? All of these questions could only be answered with an extensive analysis which we did not have time nor the data for. Instead, we decided every person, given obstructions, could see 25% of trees within a 30m buffer of ones house. We chose these parameters to ensure a conservative analysis of visible trees. However, even with the conservative take on this goal of visible trees, roughly 98% of all homes in Vancouver are able to see three trees. Because of this conservative analysis and the immense success of visible trees in Vancouver, we felt confident to utilize the findings of this analysis.
+### Three Tree Visibility
+The first component of the 3-30-300 goal stipulates that individuals should be able to see three trees from their residence. Determining the visibility range from each house, the location of every window in Vancouver, and the presence of obstructions would require an extensive analysis beyond the scope and data availability of this project. Instead, a conservative estimate was made, assuming that each person, considering obstructions, could see 25% of the trees within a 30m buffer of their house. Despite this conservative approach, approximately 98% of all homes in Vancouver were found to have visibility of three trees, instilling confidence in the utilization of these findings.
 
-#### Definition of Park Service
-The 3-30-300 goal specifically looks at whether a park is within 300 meters of a home which drove our approach in this analysis. We think the 3-30-300 goal should also analyze whether a park meets a certain quality such as amenities, safety and ecological value. Future analyses related to this project could be to judge each park's quality and whether or not they are fit to still be considered an adequate park in this analysis.
+### Definition of Park Service
+The 3-30-300 goal specifically focuses on whether a park is located within 300 meters of a home, which guided the approach in this analysis. It is suggested that future iterations of the 3-30-300 goal should also consider the quality of parks, such as amenities, safety, and ecological value. Subsequent analyses related to this project could involve assessing each park's quality and determining its adequacy for inclusion in the analysis.
 
-#### Vancouver Street Data Quality
-In creating our network analysis, it is worth noting not every trail or pathway is located in Vancouvers data repository. Therefore, over the area of Vancouver, there may be some homes which are within 300 meters of a park but given certain paths were not included in the network, were not counted as being serviced. Nevertheless, this is a minor discrepency in the data given the scale.
+### Lidar Classification Issues
+Despite the extensive analysis and cleaning of LiDAR data, the sheer scale and volume of points may have resulted in some misclassifications. It is worth noting, however, that the City of Vancouver performed their own classification of the LiDAR dataset, which served as an adequate starting point for this analysis.
 
-#### Lidar Classificaton Issues
-Despite our extensive analysis and cleaning of lidar data, given the scale and shear amount of points, there are likely some points that were misclassified. However, the city of Vancouver completed some classification of their own for the lidar data set and were quite adequate to start for our analysis.
+### Vancouver Street Data Quality
+In the creation of the network analysis, it is important to note that not every trail or pathway is included in Vancouver's data repository. Consequently, there may be instances where homes are within 300 meters of a park but were not counted as being serviced due to the absence of certain paths in the network. However, given the scale of the analysis, this discrepancy is considered minor.
+
+### Vancouver Street Tree Data Quality
+Due to concerns regarding the maintenance quality of the Vancouver Street Tree dataset, a decision was made to derive a new tree dataset using LiDAR data collected in 2022. The findings validated this choice, as many trees were found to be unaccounted for in the Vancouver dataset, rendering it inadequate for the purposes of this analysis.
 
 
 
